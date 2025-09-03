@@ -1,0 +1,31 @@
+{
+  "name": "vitepress-desktop",
+  "version": "1.0.0",
+  "description": "VitePress documentation with desktop app support",
+  "main": "index.js",
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs",
+    "build:docs": "node scripts/build-docs.js",
+    "build:desktop": "node scripts/build-desktop.js",
+    "build:all": "node scripts/deploy.js",
+    "dev:desktop": "cd desktop && wails dev",
+    "clean": "node scripts/clean.js"
+  },
+  "keywords": [
+    "vitepress",
+    "desktop",
+    "wails",
+    "documentation"
+  ],
+  "author": "Young-Gi Park <ghostyak@gmail.com>",
+  "license": "MIT",
+  "type": "module",
+  "devDependencies": {
+    "mermaid": "^11.10.1",
+    "vitepress": "^1.6.4",
+    "vitepress-plugin-mermaid": "^2.0.17",
+    "vitepress-sidebar": "^1.33.0"
+  }
+}
