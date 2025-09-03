@@ -1,12 +1,12 @@
-# VitePress 오프라인 데모
+# VitePress Desktop
 
-초보자를 위한 VitePress 튜토리얼 및 데모 사이트입니다.
+초보자를 위한 VitePress 튜토리얼 및 데스크톱 앱 프로젝트입니다.
 
 ## 특징
 
 - 📚 **한국어 문서**: 모든 내용이 한국어로 작성
 - 🚀 **완전한 데모**: VitePress의 모든 기능을 포함한 예제
-- 📦 **오프라인 지원**: node_modules 포함으로 인터넷 없이도 실행 가능
+- 💻 **데스크톱 앱 지원**: Wails를 사용한 크로스 플랫폼 데스크톱 앱
 - 🎨 **Mermaid 다이어그램**: 다양한 다이어그램 예제 포함
 - ⚡ **Vue 컴포넌트**: 인터랙티브한 예제들
 
@@ -36,7 +36,6 @@ cd vitepress-desktop-unified
 
 #### 2. Node.js 의존성 설치
 ```bash
-# 이미 node_modules가 포함되어 있지만, 업데이트가 필요한 경우
 npm install
 ```
 
@@ -55,65 +54,6 @@ cd desktop
 go mod tidy
 ```
 
-### 오프라인 설치 가이드
-
-이 프로젝트는 오프라인 환경을 고려하여 설계되었습니다. 완전한 오프라인 개발을 위한 설정 방법:
-
-#### 사전 준비 (온라인 환경에서)
-
-1. **Wails 바이너리 다운로드**:
-   - [Wails 릴리즈 페이지](https://github.com/wailsapp/wails/releases)에서 OS별 바이너리 다운로드
-   - 압축 해제 후 시스템 PATH에 추가
-
-2. **Go 의존성 캐싱**:
-   ```bash
-   cd desktop
-   go mod download    # 모든 의존성 다운로드
-   go mod vendor      # vendor 디렉토리에 의존성 저장
-   ```
-
-3. **시스템 런타임 사전 설치**:
-   - **Windows**: [WebView2 Runtime](https://developer.microsoft.com/microsoft-edge/webview2/) 다운로드
-   - **macOS**: Xcode Command Line Tools 설치
-   - **Linux**: 배포판별 webkit2gtk 패키지 다운로드
-
-#### 오프라인 환경에서 설치
-
-1. **프로젝트 파일 복사** (USB, 네트워크 드라이브 등으로)
-
-2. **Wails 바이너리 설치**:
-   ```bash
-   # 다운로드한 wails 바이너리를 PATH에 추가
-   # Windows
-   copy wails.exe C:\Windows\System32\
-   
-   # macOS/Linux  
-   sudo cp wails /usr/local/bin/
-   chmod +x /usr/local/bin/wails
-   ```
-
-3. **설치 확인**:
-   ```bash
-   wails version
-   ```
-
-4. **오프라인 빌드**:
-   ```bash
-   # vendor 디렉토리가 있으면 오프라인으로 빌드 가능
-   cd desktop
-   go build -mod=vendor .
-   
-   # 또는 Wails 빌드
-   wails build -tags production
-   ```
-
-#### 트러블슈팅
-
-- **Go 모듈 오류**: `go mod vendor`로 의존성을 미리 다운로드했는지 확인
-- **WebView 오류**: 시스템별 런타임이 설치되어 있는지 확인
-- **빌드 오류**: `wails doctor` 명령으로 환경 확인
-
-> **참고**: 완전한 오프라인 환경에서는 처음 설정 시 온라인 환경에서 의존성을 미리 준비하는 것이 필수입니다.
 
 ## 빠른 시작
 
@@ -264,13 +204,6 @@ npm run docs:dev
 
 > **참고**: 이 문제는 [vitepress-plugin-mermaid GitHub Issues](https://github.com/emersonbottero/vitepress-plugin-mermaid/issues)에서 추적되고 있으며, 향후 업데이트에서 해결될 예정입니다.
 
-## 오프라인 사용
-
-이 프로젝트는 오프라인 환경에서의 사용을 고려하여 다음과 같이 설정되었습니다:
-
-- `node_modules` 디렉토리가 git에 포함됨
-- 모든 의존성이 사전에 설치됨
-- 인터넷 연결 없이도 개발 서버 실행 가능
 
 ## 브라우저 지원
 
@@ -289,4 +222,4 @@ ISC License
 
 ---
 
-**VitePress로 만든 오프라인 지원 데모 사이트** 🚀
+**VitePress로 만든 데스크톱 앱 지원 문서 사이트** 🚀

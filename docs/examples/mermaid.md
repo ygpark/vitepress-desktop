@@ -1,5 +1,5 @@
 ---
-sbtitle: "Mermaid 다이어그램"
+title1: "Mermaid 다이어그램"
 ---
 
 # Mermaid 다이어그램

@@ -27,7 +27,7 @@ export default withMermaid({
       resolvePath: null,
       useTitleFromFileHeading: true,
       useTitleFromFrontmatter: true,
-      frontmatterTitleFieldName: "sbtitle",
+      frontmatterTitleFieldName: "title1",
       useFolderTitleFromIndexFile: false,
       useFolderLinkFromIndexFile: false,
       hyphenToSpace: false,

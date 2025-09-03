@@ -10,20 +10,29 @@ This is a unified VitePress documentation site project with desktop app support 
 
 ```bash
 # VitePress development
-npm run docs:dev          # Start development server
+npm run docs:dev          # Start development server (http://localhost:5173)
 npm run docs:build        # Build for production
 npm run docs:preview      # Preview production build
 
 # Desktop app development
 npm run dev:desktop       # Start desktop app in development mode (requires Wails)
 
-# Build commands
-npm run build:docs        # Build docs only (uses scripts/build-docs.sh)
-npm run build:desktop     # Build desktop app only (uses scripts/build-desktop.sh)
-npm run build:all         # Build both web and desktop (uses scripts/deploy.sh)
+# Build commands (uses JavaScript scripts in scripts/ directory)
+npm run build:docs        # Build docs only (scripts/build-docs.js)
+npm run build:desktop     # Build desktop app only (scripts/build-desktop.js)
+npm run build:all         # Build both web and desktop (scripts/deploy.js)
 
 # Maintenance
-npm run clean             # Remove all build artifacts and cache files
+npm run clean             # Remove all build artifacts and cache files (scripts/clean.js)
+
+# Using Makefile (alternative)
+make help                 # Show all available targets
+make install             # Install all dependencies
+make dev                 # Start VitePress dev server
+make build-all           # Build both web and desktop
+make build-windows       # Build for Windows
+make build-mac           # Build for macOS
+make build-linux         # Build for Linux
 ```
 
 ## Project Structure
@@ -56,6 +65,7 @@ npm run clean             # Remove all build artifacts and cache files
 **VitePress Configuration:**
 
 - Uses `vitepress-plugin-mermaid` for diagram support
+- Uses `vitepress-sidebar` for automatic sidebar generation
 - Korean language content for beginners
 - Custom navigation and sidebar in `docs/.vitepress/config.js`
 - ESM module support (`"type": "module"` in package.json)
@@ -64,7 +74,7 @@ npm run clean             # Remove all build artifacts and cache files
 
 - Go backend using Wails v2 framework
 - Frontend serves pre-built VitePress static files
-- Configured for offline usage with bundled dependencies
+- Cross-platform desktop application support
 
 **Known Issues:**
 
@@ -83,7 +93,14 @@ npm run clean             # Remove all build artifacts and cache files
 - **VitePress** ^1.6.4: Static site generator
 - **Mermaid** ^11.10.1: Diagram rendering (with known compatibility issues)
 - **vitepress-plugin-mermaid** ^2.0.17: VitePress Mermaid integration
+- **vitepress-sidebar** ^1.33.0: Automatic sidebar generation
 - **Wails**: Go desktop app framework (not in package.json, system dependency)
+
+## Prerequisites
+
+- **Node.js** 18.0+ (recommended: 20.x LTS)
+- **Go** 1.19+ (for desktop app development)
+- **Wails** v2.x (install with: `go install github.com/wailsapp/wails/v2/cmd/wails@latest`)
 
 ## License
 

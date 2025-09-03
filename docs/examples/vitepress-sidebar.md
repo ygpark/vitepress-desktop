@@ -1,5 +1,9 @@
 # vitepress-sidebar 플러그인
 
+## 공홈
+
+[vitepress-sidebar 플러그인 공식 홈페이지](https://vitepress-sidebar.cdget.com/introduction)
+
 ## 예제 1: 가장 기본적인 사용법
 
 ::: code-group
